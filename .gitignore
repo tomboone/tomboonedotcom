@@ -1,0 +1,28 @@
+# Python-specific
+.venv/
+.env
+*.pyc
+__pycache__/
+*.egg-info/
+
+# Flask-specific
+instance/
+.webassets-cache/
+
+# Testing and Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build artifacts
+dist/
+build/
+
+# Editor-specific (common examples)
+.idea/
+.vscode/
+*.swp
+*~
+
+# database
+instance
