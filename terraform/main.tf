@@ -58,9 +58,21 @@ resource "azurerm_linux_web_app" "main" {
     scm_minimum_tls_version = "1.2"
     use_32_bit_worker   = true
     worker_count        = 1
+    app_command_line    = "gunicorn --bind=0.0.0.0 --timeout 600 app:app"
 
     application_stack {
       python_version = "3.13"
+    }
+  }
+
+  logs {
+    detailed_error_messages = true
+    failed_request_tracing  = true
+    http_logs {
+      file_system {
+        retention_in_days = 7
+        retention_in_mb   = 35
+      }
     }
   }
 
