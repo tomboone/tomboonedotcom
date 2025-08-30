@@ -3,10 +3,11 @@ from typing import TYPE_CHECKING
 
 from sqlalchemy import String, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from src.tomboonedotcom.extensions import db
+from tomboonedotcom.extensions import db
 
 if TYPE_CHECKING:
-    from src.tomboonedotcom.Models.Profile import Profile
+    # noinspection PyUnusedImports
+    from tomboonedotcom.Models import Profile
 
 
 class Project(db.Model):

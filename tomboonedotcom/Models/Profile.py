@@ -3,13 +3,10 @@ from typing import List, TYPE_CHECKING
 from sqlalchemy import String
 from sqlalchemy.dialects.sqlite import TEXT
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from src.tomboonedotcom.extensions import db
+from tomboonedotcom.extensions import db
 
 if TYPE_CHECKING:
-    from src.tomboonedotcom.Models.Project import Project
-    from src.tomboonedotcom.Models.Employer import Employer
-    from src.tomboonedotcom.Models.Consulting import Consulting
-    from src.tomboonedotcom.Models.Education import Education
+    pass
 
 
 class Profile(db.Model):

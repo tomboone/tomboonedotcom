@@ -26,3 +26,12 @@ build/
 
 # database
 instance
+
+# static files
+static/images
+
+# terraform
+.terraform
+*.tfvars
+*.hcl
+tfplan
