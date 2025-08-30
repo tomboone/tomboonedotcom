@@ -40,8 +40,13 @@ jobs:
         run: |
           mkdir -p deploy
           cp -r $(poetry env info --path)/lib/python${{ env.PYTHON_VERSION }}/site-packages/* deploy/
-          cp -r . deploy/
-          cd deploy && rm -rf .git .github __pycache__ .pytest_cache .venv poetry.lock pyproject.toml
+          find . -maxdepth 1 -type f -name "*.py" -exec cp {} deploy/ \;
+          cp -r tomboonedotcom deploy/
+          cp -r templates deploy/
+          cp -r static deploy/
+          cp -r alembic deploy/
+          cp alembic.ini deploy/ 2>/dev/null || true
+          mkdir -p deploy/instance
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
