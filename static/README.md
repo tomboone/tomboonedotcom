@@ -1,0 +1,1 @@
+Placeholder for static files. `images/` is mounted from Azure storage.
